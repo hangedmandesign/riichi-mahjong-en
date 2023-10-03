@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>점수 계산기</title>
+  <title>He1Fire's Riichi Calculator</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="counter.css">
   <script src="counter.js"></script>
@@ -13,7 +13,7 @@
 
 <body onclick="openFullScreenMode();" onmouseup="hidegap();">
   <div id="Gap_mode" style="display: none;">0</div>
-  <!-- 아래쪽 -->
+  <!-- Down/East -->
   <div class="container" id="DownPerson">
     <div class="riichi_stick" id="DownPerson_Riichi">
       <div class="circle"></div>
@@ -40,7 +40,7 @@
     </div>
     <div id="DownPerson_Scoregap" style="display: none;">0</div>
   </div>
-  <!-- 오른쪽 -->
+  <!-- Right/South -->
   <div class="container" id="RightPerson">
     <div class="riichi_stick" id="RightPerson_Riichi">
       <div class="circle"></div>
@@ -67,7 +67,7 @@
     </div>
     <div id="RightPerson_Scoregap" style="display: none;">0</div>
   </div>
-  <!-- 위쪽 -->
+  <!-- Up/West -->
   <div class="container" id="UpPerson">
     <div class="riichi_stick" id="UpPerson_Riichi">
       <div class="circle"></div>
@@ -94,7 +94,7 @@
     </div>
     <div id="UpPerson_Scoregap" style="display: none;">0</div>
   </div>
-  <!-- 왼쪽 -->
+  <!-- North/Left -->
   <div class="container" id="LeftPerson">
     <div class="riichi_stick" id="LeftPerson_Riichi">
       <div class="circle"></div>
@@ -122,7 +122,7 @@
     </div>
     <div id="LeftPerson_Scoregap" style="display: none;">0</div>
   </div>
-  <!-- 가운데 -->
+  <!-- Middle -->
   <div class="container_mid" id='Mid'>
     <div class="now">
       <span id="nowwind">東</span> <span id=nowcnt>1</span> 局
@@ -154,22 +154,22 @@
       </div>
     </div>
     <div class="ron" onclick="ron1();">
-      론
+      Ron
     </div>
     <div class="tsumo" onclick="tsumo1();">
-      쯔모
+      Tsumo
     </div>
     <div class="ryuukyoku" onclick="ryuukyoku1();">
-      유국
+      Ryuu
     </div>
   </div>
-  <!-- 주사위버튼 -->
+  <!-- Dice Button -->
   <div id="Roll_Dice" onclick="dice(); roll();">
     <div class="container_dice" id="opendice">
       <script>document.querySelector('#opendice').innerHTML=makedice(5);</script>
     </div> 
   </div>
-  <!-- 옵션버튼 -->
+  <!-- Option Button -->
   <div id="Show_Option" onclick="option();">
     <div class="container_option" id="openoption">
       <div class="circle_button" style="grid-area: _1;"></div>
@@ -179,7 +179,7 @@
   </div>
 
 
-  <!-- 론1 -->
+  <!-- Ron 1 -->
   <div class="modal" id="Modal_ron1" onclick="
     if (event.target==this){
       this.style.display='';
@@ -189,7 +189,7 @@
     <div class="modal_content">
       <div class="container_choose">
         <div class="explain">
-          론한 사람을 선택해주세요.
+          Select caller.
         </div>
         <div class="downcheck" id="downcheck_ron1" onclick="makechk(this);">
           ▼
@@ -209,7 +209,7 @@
       </div>
     </div>
   </div>
-  <!-- 론2 -->
+  <!-- Ron 2 -->
   <div class="modal" id="Modal_ron2" onclick="
     if (event.target==this){
       this.style.display='';
@@ -220,7 +220,7 @@
     <div class="modal_content">
       <div class="container_choose">
         <div class="explain">
-          방총당한 사람을 선택해주세요.
+          Select discarder.
         </div>
         <div class="downcheck" id="downcheck_ron2" onclick="makechk(this); 
         makeunchk(['right', 'up', 'left'],'check_ron2');">
@@ -241,7 +241,7 @@
       </div>
     </div>
   </div>
-  <!-- 론3 -->
+  <!-- Ron 3 -->
   <div class="modal" id="Modal_ron3" onclick="
     if (event.target==this){
       this.style.display='';
@@ -264,7 +264,7 @@
       </div>
       <div class="container_inputscore" style="font-size: 30px; white-space: nowrap;">
         <div style="grid-area: fan;">
-          판:
+          Han:
         </div>
         <div style="grid-area: fancnt;">
           <label><input type="radio" name="fan_ron" value="1" onclick="makeundisable('ron'); yakumancnt('ron',0);
@@ -276,13 +276,13 @@
           <label><input type="radio" name="fan_ron" value="5" onclick="makedisable('ron'); yakumancnt('ron',0);"><span>5</span></label>
           <label><input type="radio" name="fan_ron" value="6" onclick="makedisable('ron'); yakumancnt('ron',0);"><span>6+</span></label>
           <label><input type="radio" name="fan_ron" value="8" onclick="makedisable('ron'); yakumancnt('ron',0);"><span>8+</span></label>
+		  <div></div>
           <label><input type="radio" name="fan_ron" value="11" onclick="makedisable('ron'); yakumancnt('ron',0);"><span>11+</span></label>
           <label><input type="radio" name="fan_ron" value="13" onclick="makedisable('ron'); yakumancnt('ron',0);"><span>13+</span></label>
-          <div></div>
-          <label><input type="radio" name="fan_ron" value="13" onclick="makedisable('ron'); yakumancnt('ron',1);"><span>1배역만</span></label>
+          <label><input type="radio" name="fan_ron" value="13" onclick="makedisable('ron'); yakumancnt('ron',1);"><span>Yakuman</span></label>
         </div>
         <div style="grid-area: bu;">
-          부:
+          Fu: 
         </div>
         <div style="grid-area: bucnt;">
           <label><input type="radio" name="bu_ron" value="20" disabled><span>20</span></label>
@@ -313,7 +313,7 @@
       </div>
     </div>
   </div>
-  <!-- 쯔모1 -->
+  <!-- Tsumo 1 -->
   <div class="modal" id="Modal_tsumo1" onclick="
     if (event.target==this){
       this.style.display='';
@@ -323,7 +323,7 @@
     <div class="modal_content">
       <div class="container_choose">
         <div class="explain">
-          쯔모한 사람을 선택해주세요.
+          Select caller.
         </div>
         <div class="downcheck" id="downcheck_tsumo" onclick="makechk(this); 
         makeunchk(['right', 'up', 'left'],'check_tsumo');">
@@ -344,7 +344,7 @@
       </div>
     </div>
   </div>
-  <!-- 쯔모2 -->
+  <!-- Tsumo 2 -->
   <div class="modal" id="Modal_tsumo2" onclick="
     if (event.target==this){
       this.style.display='';
@@ -366,7 +366,7 @@
       </div>
       <div class="container_inputscore" style="font-size: 30px; white-space: nowrap;">
         <div style="grid-area: fan;">
-          판:
+          Han:
         </div>
         <div style="grid-area: fancnt;">
           <label><input type="radio" name="fan_tsumo" value="1" onclick="makeundisable('tsumo'); yakumancnt('tsumo',0);
@@ -378,13 +378,13 @@
           <label><input type="radio" name="fan_tsumo" value="5" onclick="makedisable('tsumo'); yakumancnt('tsumo',0);"><span>5</span></label>
           <label><input type="radio" name="fan_tsumo" value="6" onclick="makedisable('tsumo'); yakumancnt('tsumo',0);"><span>6+</span></label>
           <label><input type="radio" name="fan_tsumo" value="8" onclick="makedisable('tsumo'); yakumancnt('tsumo',0);"><span>8+</span></label>
+		  <div></div>
           <label><input type="radio" name="fan_tsumo" value="11" onclick="makedisable('tsumo'); yakumancnt('tsumo',0);"><span>11+</span></label>
           <label><input type="radio" name="fan_tsumo" value="13" onclick="makedisable('tsumo'); yakumancnt('tsumo',0);"><span>13+</span></label>
-          <div></div>
-          <label><input type="radio" name="fan_tsumo" value="13" onclick="makedisable('tsumo'); yakumancnt('tsumo',1);"><span>1배역만</span></label>
+          <label><input type="radio" name="fan_tsumo" value="13" onclick="makedisable('tsumo'); yakumancnt('tsumo',1);"><span>Yakuman</span></label>
         </div>
         <div style="grid-area: bu;">
-          부:
+          Fu: 
         </div>
         <div style="grid-area: bucnt;">
           <label><input type="radio" name="bu_tsumo" value="20" disabled><span>20</span></label>
@@ -414,21 +414,21 @@
       </div>
     </div>
   </div>
-  <!-- 유국1 -->
+  <!-- Exhaustive 1 -->
   <div class="modal" id="Modal_ryuukyoku1" onclick="
     if (event.target==this)
       this.style.display='';
   ">
     <div class="modal_content">
       <div style="font-size: 40px; margin: 20px;" onclick="ryuukyoku2();">
-        일반유국
+        Exhaustive
       </div>
       <div style="font-size: 40px; margin: 20px;" onclick="ryuukyoku_Special();">
-        특수유국
+        Abortive
       </div>
     </div>
   </div>
-  <!-- 유국2 -->
+  <!-- Exhaustive 2 -->
   <div class="modal" id="Modal_ryuukyoku2" onclick="
     if (event.target==this){
       this.style.display='';
@@ -438,7 +438,7 @@
     <div class="modal_content">
       <div class="container_choose">
         <div class="explain">
-          텐파이인 사람을 선택해주세요.
+          Select Tenpai.
         </div>
         <div class="downcheck" id="downcheck_ryuukyoku" onclick="makechk(this);">
           ▼
@@ -458,7 +458,7 @@
       </div>
     </div>
   </div>
-  <!-- 점수 보여주기-->
+  <!-- Show score -->
   <div class="modal" id="Modal_showscore" onclick="
     if (event.target==this){
       this.style.display='';
@@ -495,22 +495,22 @@
     </div>
   </div>
 
-  <!-- 뽑기 -->
+  <!-- Draw -->
   <div class="modal" id="Modal_draw" onclick="
     if (event.target==this)
       this.style.display='';
   ">
     <div class="modal_content">
       <div style="font-size: 40px; margin: 20px;" onclick="dice();">
-        주사위
+        Dice
       </div>
       <div style="font-size: 40px; margin: 20px;" onclick="randomseat();">
-        자리 뽑기
+        Seat Draw
       </div>
     </div>
   </div>
 
-  <!-- 주사위 -->
+  <!-- Dice -->
   <div class="modal" id="Modal_dice" onclick="
   if (event.target==this){
     if (document.querySelector('#dicesum').innerText!='?'){
@@ -549,7 +549,7 @@
       </div>
     </div>
   </div>
-  <!-- 자리 뽑기-->
+  <!-- Seat Draw -->
   <div class="modal" style="display: inline;" id="Modal_seat" onclick="
   if (event.target==this){
     var tiles=['#tile1', '#tile2', '#tile3', '#tile4'];
@@ -578,21 +578,21 @@
       </div>
     </div>
   </div>
-  <!-- 옵션 -->
+  <!-- Option -->
   <div class="modal" id="Modal_option" onclick="
     if (event.target==this)
       this.style.display='';
   ">
     <div class="modal_content">
       <div style="font-size: 40px; margin: 20px;" onclick="modify();">
-        점수 수정
+        Edit Score
       </div>
       <div style="font-size: 40px; margin: 20px;" onclick="record();">
-        점수 기록
+        Score Record
       </div>
     </div>
   </div>
-  <!-- 점수 수정 -->
+  <!-- Edit Score -->
   <div class="modal" id="Modal_modify" onclick="
   if (event.target==this){
     this.style.display='';
@@ -601,7 +601,7 @@
     <div class="modal_content" style="font-size: 20px;">
       <div class="container_modify">
           <div style="grid-area: name; font-size: 30px;">
-            이름
+            Name
           </div>
           <div style="grid-area: name0; margin: 5px;">
             ▼<br><input type="text" maxlength="4" id="name0">
@@ -616,7 +616,7 @@
             ◀<br><input type="text" maxlength="4" id="name3">
           </div>
         <div style="grid-area: score; font-size: 30px;">
-          점수 (100점 단위)
+          Score (x100p)
         </div>
         <div style="grid-area: score0; margin: 5px;">
           ▼<br><input type="number" id="score0">
@@ -636,7 +636,7 @@
       </div>
     </div>
   </div>
-  <!-- 점수 기록 -->
+  <!-- Score Record -->
   <div class="modal" id="Modal_record" onclick="
   if (event.target==this){
     this.style.display='';
@@ -650,7 +650,7 @@
         <div style="grid-area: leftname; font-size: 25px;" id="LeftPerson_Name">◀</div>
         <div style="color: red; grid-area: rollback; font-size: 20px;" onclick="rollback();">
           <div>
-            되돌리기
+            Revert
           </div>
         </div>
         <div class="container_recordscroll" style="grid-area: scroll; overflow: auto;">
@@ -684,7 +684,7 @@
     </div>
   </div>
   
-  <!-- 경고창 -->
+  <!-- Warning Window -->
   <div class="modal" id="Modal_alert" onclick="
   if (event.target==this)
     this.style.display='';
